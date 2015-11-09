@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>LEGIS</title>
+    <style>
+      html, body, #map {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+
+      #panel {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        margin-left: -180px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+      }
+
+      #bar {
+        width: 240px;
+        background-color: rgba(255, 255, 255, 0.75);
+        margin: 8px;
+        padding: 4px;
+        border-radius: 4px;
+      }
+
+      #pane {
+        width: 600px;
+        float: left;
+      }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?libraries=drawing,places,geometry"></script>
+    <script>
+var apiKey = 'AIzaSyBWdGBJLWQaCoyea6synNCIxrCjWSwhyHk';
+
+var map;
+var drawingManager;
+
+function initialize() {
+  var mapOptions = {
+    zoom: 13,
+    center: {lat: 43.6533103, lng:-79.3827675}
+  };
+
+  map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+  var encodedPolyline = "_mchG~_ajNQAUCa@Ac@?w@?i@Bo@D}@NOBUFk@Lg@Pk@Ri@Vg@Tg@\\e@Zq@h@a@^YXc@d@a@f@_@f@k@x@q@bAi@x@a@p@q@`A{@rAqAnBcExFkCtCq@p@_Az@aAz@cAv@WRc@Z}@r@{@j@w@j@_BhAa@\\c@`@e@f@s@t@e@j@q@t@eAhA{BdCcDrDMNOLGHGFqGjHc@b@_@^UTOLQLaAn@";
+  var decodedPath = google.maps.geometry.encoding.decodePath(encodedPolyline);
+
+  for (var i = 0; i < decodedPath.length; ++i) {
+    console.log(decodedPath[i].lat() + ", " + decodedPath[i].lng());
+  }
+}
+
+$(window).load(initialize);
+
+    </script>
+  </head>
+
+  <body>
+    <div id="pane">
+      <div id="output"></div>
+    </div>
+    <div id="map"></div>
+  </body>
+</html>

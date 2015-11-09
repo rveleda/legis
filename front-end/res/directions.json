@@ -1,0 +1,298 @@
+jsonCallback({
+  "geocoded_waypoints":
+  [
+    {
+      "geocoder_status":"OK",
+      "place_id":"ChIJZepPCiMuK4gR-3Tm7gfiMCM",
+      "types":["street_address"]
+    },
+    {
+      "geocoder_status":"OK",
+      "place_id":"EjMyMDItMjQ4IENvbHVtYmlhIFN0IFcsIFdhdGVybG9vLCBPTiBOMkwgMEE3LCBDYW5hZGE",
+      "types":["street_address"]
+    }
+  ],
+  "routes":
+  [
+    {
+      "bounds":
+      {
+        "northeast":
+        {
+          "lat":43.793941,
+          "lng":-79.49300319999999
+        },
+        "southwest":
+        {
+          "lat":43.40394149999999,
+          "lng":-80.5456495
+        }
+      },
+      "copyrights":"Map data ©2015 Google",
+      "legs":
+      [
+        {
+          "distance":
+          {
+            "text":"112 km",
+            "value":111945
+          },
+          "duration":
+          {
+            "text":"1 hour 11 mins",
+            "value":4235
+          },
+          "end_address":"202-248 Columbia St W, Waterloo, ON N2L 0A7, Canada",
+          "end_location":
+          {
+            "lat":43.4750516,
+            "lng":-80.5456495
+          },
+          "start_address":"1788 The Pond Rd, North York, ON M3J, Canada",
+          "start_location":
+          {
+            "lat":43.771261,
+            "lng":-79.4965308
+          },
+          "steps":
+          [
+            {
+              "distance":
+              {
+                "text":"0.3 km",
+                "value":270
+              },
+              "duration":
+              {
+                "text":"1 min",
+                "value":33
+              },
+              "end_location":
+              {
+                "lat":43.7719512,
+                "lng":-79.493308
+              },
+              "html_instructions":"Head <b>east</b> on <b>The Pond Rd</b> toward <b>Keele St</b>",
+              "polyline":{"points":"kadjGhtedNiCcS"},
+              "start_location":
+              {
+                "lat":43.771261,
+                "lng":-79.4965308
+              },
+              "travel_mode":"DRIVING",
+              "score":17.369413951286205
+            },
+            {
+              "distance":
+              {
+                "text":"2.4 km",
+                "value":2427
+              },
+              "duration":
+              {
+                "text":"5 mins",
+                "value":279
+              },
+              "end_location":
+              {
+                "lat":43.7932597,
+                "lng":-79.49757079999999
+              },
+              "html_instructions":"Turn <b>left</b> at the 1st cross street onto <b>Keele St</b>",
+              "maneuver":"turn-left",
+              "polyline":{"points":"uedjGd`edNEWAQESeF`AyDx@yEt@S@oHxA]FwAPy@PYB]Bc@?g@?_@Ca@C_@G}AUwAQ_AGg@Am@Bg@Be@DwBP_@H{Cl@oDt@w@HmGlAgARgAReDf@sBXwAXaHnAgBTqGjAoEv@QBi@HMBA?_AL}ATg@F"},
+              "start_location":
+              {
+                "lat":43.7719512,
+                "lng":-79.493308
+              },
+              "travel_mode":"DRIVING",
+              "score":25.98947315970085
+            },
+            {
+              "distance":
+              {
+                "text":"0.4 km",
+                "value":365
+              },
+              "duration":
+              {
+                "text":"1 min",
+                "value":29
+              },
+              "end_location":
+              {
+                "lat":43.7925656,
+                "lng":-79.4974806
+              },
+              "html_instructions":"Slight <b>right</b> onto the <b>ON-407 W</b> ramp<div style=\"font-size:0.9em\">Toll road</div>",
+              "polyline":{"points":"{jhjGxzedNKGKEICQCKCGCMGIIIGEGCECCCGCEEMAICK?GAOASBW?IBOBM@CDIBIFIDGFEFGHEFCHCFAHAD?F@H@B?D@FBDBFBDFDDDFFHDHDJBJFNJ^Jb@XlAFX@@NL"},
+              "start_location":
+              {
+                "lat":43.7932597,
+                "lng":-79.49757079999999
+              },
+              "travel_mode":"DRIVING",
+              "score":47.16693427582367
+            },
+            {
+              "distance":
+              {
+                "text":"34.7 km",
+                "value":34732
+              },
+              "duration":
+              {
+                "text":"18 mins",
+                "value":1095
+              },
+              "end_location":
+              {
+                "lat":43.5975856,
+                "lng":-79.80216449999999
+              },
+              "html_instructions":"Merge onto <b>ON-407</b><div style=\"font-size:0.9em\">Toll road</div>",
+              "maneuver":"merge",
+              "polyline":{"points":"qfhjGfzedNbAtGbAzGhAdHHh@ZjB`EjWt@xEr@xEt@bFhAtHp@bE~CrRd@bC~A|Kx@hFHf@p@~EZdBtArJLdABPDTdAtHbA|GnAhJv@nGpDfZD^bB`N~A`MbCjRnC~TD\\DXt@xFdBjNfA~Iz@lH@FtBnOZtBXjBh@dD\\jBRjAP|@ZzA^pBd@rBNp@bAlEj@~Bx@fD|@dDd@dB~@|Cv@fC^lA^jAJ\\tB|GtEdOvB`HnBjGFThAnDn@nBx@lClBlG|@bDv@~Bj@dBRj@lBfG^lAj@lBRt@l@rBx@|C~@~C|ArFjD~Mp@pC~@fEl@pCn@zCTdAt@zCx@zC|@jDp@`Cj@pBp@`C`BlFv@nChAbEl@zBzAdGrBzIdBfIf@tBhA~FNr@pBxKlAlHn@jEv@dFvAxJpAxIRnAj@rDx@`GfAdHn@dE|AzKt@lFn@hEp@nEj@zDVbBZrBbCfPn@fEHb@Lx@@FTtA^hCJr@ZxBf@nCl@tCNr@Nj@Pv@Pf@Lf@Nf@Pf@Nb@Pf@Pd@Tl@^z@Zt@v@dBHLJRlAxBbAzAbAvANRh@t@RX\\b@jB|BvE~Fp@v@vAbBf@j@BDb@f@pAtABBfBtBfAnA`BnB~AnBfAxAnA~Az@jAvAnBl@|@l@|@zAdCdC~DvBrDz@zAv@xAvCzFJPl@jABFxC|FpAhCnA~BHP`AnBl@jAFJt@xAn@lAz@bBx@~ANZhAzBfBhDNZLT\\p@`AlB~@fBLVrCrFj@jAdAtBv@zAr@tAj@jAbDjGb@z@zAtClAxBx@pA\\f@`@l@pAdBx@~@p@v@fAhAfAbA\\ZZVfAz@h@`@p@d@f@\\~A|@r@^j@Vf@Tf@Tn@Tj@Rr@Th@Pt@Rx@Pl@Ln@Lv@LVDd@Fn@Fh@Fp@Dl@D\\B\\@J?tABjABzBBpFHpA@vCFb@@`@?rAB`B@tADlBBlCD~@BdABrBLlALPBb@Dn@H`APh@Hj@Lj@J~@TpBj@lA`@|@\\n@VhAd@x@`@lAn@vC`BtBhAtBlAdCvAXNfCvAhCvARLrElCpAt@`@TvAv@`@ThAl@nBfA|A|@rAt@pBfAn@^z@d@dE~BpCzAhCtAzAz@xAx@pBhAjAn@~@h@z@d@j@ZlC~ApC|AbFnCZRHDfAn@fCrAzBjAlBbAxAr@jBz@vAj@jBr@bBl@lF`BtDz@`@Jb@JdCf@pE`AbGpAxCr@bCh@dB^l@L~HrBz@RtA\\lBl@bDhArCnAl@TbAd@zAr@pAp@hAl@fDlBtAz@`BdArBxAjBrAlB|ArBvApB`BnB`BpGtFnDdDnDlDfBhBfFlF`M|MnBzBf@j@dCpCfE~EtCfDrDpEbBrBnA|ArDtEpDxEzC~Dn@z@lE`G~BbDbAxAnBxCl@`AfAdB~@`Bf@|@rA`CdDtGJTt@|AjAlCrA`DlFnMfJrTp@`Bn@zAZr@x@dBr@xAbAlBn@dAj@~@jAhBbFhHnFvHnMxQLP|AhBpAxAvAzAn@r@bB~Ad@b@f@`@HFxJbIrDvC~BlBfCrBnAbAhCxBvCfCpDjDbAdAvB~BrDfEvCdDbDtDfCrCxBfChE|EZ^lAtA|BdC~AjBtAbBpAdB|@lA`A|A`A|AdAhBt@tAnCpFtAbDt@fBv@vB~@rCJT~@bD`@zA\\nAf@nB`@nBb@vBZzAd@nC^dCF\\ThBR|ATvBZ~CT`Cb@hETrBVpBPtAXdBf@lCf@`Cd@rBZnAV~@ZbAX~@\\dAj@`Bj@zAfApCxAtDtAzCr@|ARb@lAbCx@`BT`@tAfCf@~@fBxChAfBlBxCh@r@`DxEd@n@bCbDzApBfC`DdE~EfF~F`AhAxA`BlBjCjAdBPTfBxC~AxCbAtB~@tBjAjCnBjE"},
+              "start_location":
+              {
+                "lat":43.7925656,
+                "lng":-79.4974806
+              },
+              "travel_mode":"DRIVING",
+              "score":83.75207188817349
+            },
+            {
+              "distance":
+              {
+                "text":"52.7 km",
+                "value":52742
+              },
+              "duration":
+              {
+                "text":"29 mins",
+                "value":1746
+              },
+              "end_location":
+              {
+                "lat":43.4066118,
+                "lng":-80.3681687
+              },
+              "html_instructions":"Take exit <b>34</b> to merge onto <b>ON-401 W</b> toward <b>London</b><div style=\"font-size:0.9em\">Partial toll road</div>",
+              "maneuver":"ramp-right",
+              "polyline":{"points":"}cbiGnjafN?^DNDPj@nAvAhDvChH~@~Bt@lBp@lBv@rB`@bAVh@Zj@n@`Ab@l@p@r@v@p@r@h@v@d@l@Xj@T|@V|A`@dCn@nAZhBb@|A`@l@Pp@Pn@N|@Tp@Pt@Tb@L\\L\\N`@Pj@Zf@X\\Tj@`@f@b@`A~@~@~@dAhAzA~Az@|@d@f@jAv@hInJlBxB`VxXl@p@rTbWfIlJfIlJ`IhJfIlJjGbHbBlBdCrCpAzAvA~A`CpClFfGvB`CjAtArDjEpAxAl@t@dCrChCxCdCrCbBpBlC|CvFtGnC~ChCxChBvBPRzFtGvB`CX\\X^RTRTbBnB~BnClFhGnEdF`AhAlAtAtCfDfDzDtBbCdBpBn@r@`@h@`AlAz@jA`@n@h@v@n@bAvAdCt@vAh@dATh@z@lB~@`Cd@nAn@nB^hAj@lBp@fC`@fBXtAZxAZbBV|AZxBZ`CHv@V~BL|Af@nGf@vG~@|LB^Fx@`@fFl@`I\\pETnCPtBTxBTnBRzAZtB`@bC`@nB`@lBb@lBf@lBf@hBp@vBf@zAn@fBz@`CdAxCr@rBVr@lAhDtAxDl@dBbAvCdB|El@hBPd@Pd@dDlJx@|BrB|FjAdDvA`EdB`FlAbDdA|CbAnC`ArCf@xA`@nAXfA\\zAFZHd@Jj@ZnBLhAFn@JjARdDZfFVfE\\lGXfFl@tKRfDPbD~AtYj@hKXfFXhEZ`DTfB`@`CPx@Rr@p@`C`@nA`@nAn@xAh@lArB`E|@`BjA~BrHlN`CpEpElIpD|GdM~UlCbFlCdF`BxChBhDj@~@bA|Ap@`AtBnC|@fAvA~AlBnB|@v@xAlAvCvBnXvRb@Z`@Z~B~AzHxFfAp@|DrCrBxAt@h@n@d@TRPPj@h@d@f@d@h@\\d@Z^NRRZV\\Xf@LRVf@JN`@x@Vj@N\\Xp@L\\\\~@Vx@Tx@\\rAFXFVP|@Lj@F`@F^DXF^DZFf@Fh@Fl@Df@Df@F|@Bt@Dr@LzCJnBFzA?FFrA\\fI\\jIXxGTnFT`GJhCT|DJfALvAJz@Fh@F\\PhAJf@H`@Jb@Jf@FXJb@Ld@Rn@Rn@Pj@LZTp@FJPb@Tj@Tf@Rb@z@nB^z@~@pBj@nA~@rBpArCd@fAbCnFz@jBZv@Zn@l@rAbAzB~@tB`@`Ab@~@Vh@`@z@h@nAVh@l@pALZh@jATd@j@nARf@t@`B~@tBzAfDz@nBbAxB`AvBd@dAdA|B~@tBpArC~@rBv@hBp@zAd@jAPb@Vp@\\~@Xv@^hAX`APj@Rr@ZlATz@XlARx@VrAXzANr@Lr@f@pCNv@TpAVvANx@TnAVrAZfBRdAPbAF^bBnJl@dD|@zEXbBX|AjAtGTlAX|Ah@|CFX~ChQhAlGR`A`@`C|@~Et@~Db@fC^nBd@jCXzAN~@`@zBn@lDz@vEh@|C`@vBRlA^xBN|@Lz@ZdCFl@LhADf@J`AHhAJzALpBH~BDp@FnCFjDFbDDfDDpC@bABjBFbEDtCXhQFhGFfDNzJPzNFhEHpGHpCNtDRhDNlBP`BLnARzAVtBRrA\\xB\\dBx@zDd@rC~@|Et@dEn@nDz@|E~@|Ev@fE|@|Ex@jEt@|Dl@dDdAlFf@tC~AvIfDzQp@rDlAnG|@xE|@bFbAlFv@fEj@dDb@tBl@`DlArGt@~DxCjPf@jCr@`Ef@jCx@jE@D`AlFn@jDj@`DtApHv@bEv@dEx@lEf@lCf@hC\\nBVrAd@|BfCpN~ApIX`BLj@`@nBb@tBh@xBj@rBh@`Bj@jBvK`[~CzItBbGpAzD@Dz@rCt@tCr@|C^hB\\jBV~AV~ATjBT~BNtAP`CLdBFhAFlAFhBD`BB`BBtA@xBAlFC`GExECbECdEExFEnHErFCpDClDC|CCdHEtGC~CEhFC|GCbECpCAtDGlJC`F@fDDvCLhEHvBHzANpBNlBNdBXjCVxB^fDtA~LpAzLnAbL|CfYbBnObCxTbA`Jp@jGv@jHbAbJrChWvB`SfBzO|AtN~AnNlCrVxAxMhAbKlClVdAxJ|@zHt@|Gp@dG^lDvAjMj@jFfC~TXlCV|BPzAZlCXhCTpB@JHx@RhBRzAPvAZpBn@vDJh@h@hC|CtNlAnFfBlI~@lE^hBnDlPb@lBbAtE|AfH`ArEZvAt@jDv@rD~@fEr@dDdAzEjApFdA|E~@jEdA|E`@hBhAfF\\bBt@dDXpAr@tChAzD~BpHhB|FtCdJj@fBvAnE`@pAJ\\lB`G`AzChApD`AzC`A~ClB|F`@rA~@xCZdA`A|Cn@rBp@xB^xAXdA^|An@zCnAtGx@bErBjKfAxF^lBl@zCp@hDz@lEp@lDj@tC`@tBRfAPbAJp@Lz@Hv@Hr@Fx@H~@FpAFlABjADrDJnHHtHJhIB`DLnJDzDH|FFtGFvEF~DFzGF`FHpFNtMB~AJvILbM@lDNpLF|F@hAJdO@nB@\\?\\JnR@p@?p@NnY@`A?bAFzHFpLFjNDbE@fED|BFzAFpADr@JtAP|AT`BPlALv@TbAT`ARz@Tv@Pj@Tt@r@lBd@fAl@pArEdJxAtCzD|Hv@|A|A|CTd@bApBRb@Tb@~AbD~@jBf@lAr@bB"},
+              "start_location":
+              {
+                "lat":43.5975856,
+                "lng":-79.80216449999999
+              },
+              "travel_mode":"DRIVING",
+              "score":27.562129086612153
+            },
+            {"distance":
+              {
+                "text":"1.1 km",
+                "value":1080
+              },
+              "duration":
+              {
+                "text":"1 min",
+                "value":43
+              },
+              "end_location":
+              {
+                "lat":43.4048098,
+                "lng":-80.3804116
+              },
+              "html_instructions":"Take exit <b>278</b> for <b>ON-8</b> toward <b>Kitchener/Waterloo</b>",
+              "maneuver":"ramp-right",
+              "polyline":{"points":"iz|gG`|oiNCV@D?BDLX|@z@rCpA|Ej@vBx@~Cd@pBh@zBXlAh@fCv@~DNz@Lv@BRF`@Fn@Bb@@\\Bt@@t@?j@Cp@A^C^Gx@CZEZKr@Ml@Ml@GTUt@Qf@O`@[p@Sb@"},
+              "start_location":
+              {
+                "lat":43.4066118,
+                "lng":-80.3681687
+              },
+              "travel_mode":"DRIVING",
+              "score":29.530743584497486
+            },
+            {
+              "distance":
+              {
+                "text":"6.7 km",
+                "value":6674
+              },
+              "duration":
+              {
+                "text":"4 mins",
+                "value":232
+              },
+              "end_location":
+              {
+                "lat":43.4345551,
+                "lng":-80.45099759999999
+              },
+              "html_instructions":"Continue onto <b>ON-8 W</b>",
+              "polyline":{"points":"ao|gGphriNo@lAy@zA_CjE}BdEy@vA[l@i@~@i@dAQZKP[n@[l@[l@Yp@Wn@Yn@Wp@Up@Wr@Ur@Ur@}AlFsBfHoAnE[fA[fAyAlFcCrISp@{AlFiAtDK^W|@_@vA]xAYnAOv@UdAY`BOt@Id@Oz@[tBgAfH{@zFMt@QjASjAKj@c@|BOt@W`ACJ[pAKZ_@lAi@bBKVgApCs@|A]n@w@zAg@`Aw@|Ai@bAi@bAg@bAYl@Yl@[p@e@dAc@hAWn@MZa@hAUp@u@zBk@~AMb@Sf@_@jA_AnCw@zBkBtFo@hBUp@Yz@Ql@Qj@Sv@Ut@Qp@Qv@Sv@WnAWlAOx@UnAMx@Mv@k@hDi@bDg@`DyAbJu@xEeApGw@zE]nBa@jB[pAQn@EJOf@m@~Ac@hAe@dAYl@[l@MTOTOVk@|@m@x@o@v@a@d@{@~@i@h@{BtBs@r@o@t@]`@UT]d@QTq@z@aAbB]l@c@z@]t@Wl@Sd@M^Wr@Wp@a@rAOj@c@fBa@bBw@pDgA~EsAhGa@jBe@pB_@`Bs@|CeBhHa@`B"},
+              "start_location":
+              {
+                "lat":43.4048098,
+                "lng":-80.3804116
+              },
+              "travel_mode":"DRIVING",
+              "score":80.42272980489004
+            },
+            {
+              "distance":
+              {
+                "text":"0.9 km",
+                "value":866
+              },
+              "duration":
+              {
+                "text":"1 min",
+                "value":35
+              },
+              "end_location":
+              {
+                "lat":43.44032370000001,
+                "lng":-80.4558447
+              },
+              "html_instructions":"Take the <b>ON-7 E/ON-85 N</b> exit toward <b>Guelph/Waterloo</b>",
+              "maneuver":"ramp-right",
+              "polyline":{"points":"_ibhGva`jNC@ABCDCJMf@[jAYhAw@rCo@`Cs@dCe@vAKZIPKRGNKR]h@[`@YXSRSLMJOH_@PYJ]HYFSDO@K?S@S?QAM?c@EYCc@G{ASgEk@C?C@C?C@[N"},
+              "start_location":
+              {
+                "lat":43.4345551,
+                "lng":-80.45099759999999
+              },
+              "travel_mode":"DRIVING",
+              "score":16.201243326700908
+            },
+            {
+              "distance":
+              {
+                "text":"2.2 km",
+                "value":2207
+              },
+              "duration":
+              {
+                "text":"1 min",
+                "value":78
+              },
+              "end_location":
+              {
+                "lat":43.4565782,
+                "lng":-80.4705728
+              },
+              "html_instructions":"Merge onto <b>ON-7</b>",
+              "maneuver":"merge",
+              "polyline":{"points":"_mchG~_ajNQAUCa@Ac@?w@?i@Bo@D}@NOBUFk@Lg@Pk@Ri@Vg@Tg@\\e@Zq@h@a@^YXc@d@a@f@_@f@k@x@q@bAi@x@a@p@q@`A{@rAqAnBcExFkCtCq@p@_Az@aAz@cAv@WRc@Z}@r@{@j@w@j@_BhAa@\\c@`@e@f@s@t@e@j@q@t@eAhA{BdCcDrDMNOLGHGFqGjHc@b@_@^UTOLQLaAn@"},
+              "start_location":
+              {
+                "lat":43.44032370000001,
+                "lng":-80.4558447
+              },
+              "travel_mode":"DRIVING",
+              "score":95.06374289469515
+            },{"distance":{"text":"1.8 km","value":1813},"duration":{"text":"1 min","value":64},"end_location":{"lat":43.4720951,"lng":-80.47581},"html_instructions":"Continue onto <b>Conestoga Pkwy</b>","polyline":{"points":"srfhG`|cjNKFe@Vg@Ri@Ti@Pe@NSDUD]Ha@FYB[Ba@B]@{@?wAEeAEeBGcKa@gAEi@Ae@@M?[@YBg@D]Dm@J_@He@L[J_@L_@NQF_@PYL}At@{GxCyGzCaInDgD|A[Py@f@a@VUR[V_@ZGFYV"},"start_location":{"lat":43.4565782,"lng":-80.4705728},"travel_mode":"DRIVING","score":33.35818402499482},{"distance":{"text":"5.0 km","value":5009},"duration":{"text":"3 mins","value":185},"end_location":{"lat":43.4926777,"lng":-80.52293929999999},"html_instructions":"Continue onto <b>Conestoga Pkwy/ON-85 N</b>","polyline":{"points":"ssihGx|djNKLa@b@_@d@[h@m@~@m@hAa@`Aa@fAM^IVQt@Qn@Ov@Qx@Mt@Gh@E^EXARIdAEf@An@ElA?`@?Z?`@?\\?X?LBn@DpAP|B~@xK`AzLNnBH`ABX@j@B`@@h@?Z@`@?Z?\\A^AZ?NATARAVGx@C\\E\\E\\Iz@Mt@Kl@Q`AQr@IXGRWv@M^M\\Qd@Yn@Yj@Wd@eA|A[b@UVi@j@QPYVSN[Ve@ZSLYNi@Vw@\\[Lc@PmBv@cBr@g\\vMaC`AsCjA{@^s@Xg@TUJiB`Am@^YPcAv@a@X[TURWToAlA_@\\YX{@dAo@v@{@pAgAdB_@r@g@z@u@`Bo@tAYn@Sj@Ul@KZQf@g@~AGROh@IXGTa@fBUbA]lBMv@SpAKx@OjAOxAGl@Cb@KxAIrAWfFc@|HoAjUi@vJMxBKnBa@`H"},"start_location":{"lat":43.4720951,"lng":-80.47581},"travel_mode":"DRIVING","score":90.79054713321953},{"distance":{"text":"0.6 km","value":565},"duration":{"text":"1 min","value":49},"end_location":{"lat":43.494651,"lng":-80.5288405},"html_instructions":"Take the <b>King Street S</b> exit","maneuver":"ramp-right","polyline":{"points":"gtmhGjcnjNEJCFAJCROjBe@rEGn@Kj@I^IVM^_@n@QTSRWT[Vu@l@WTSTORMRGPIPELI`@EXIp@LvA@DLjB"},"start_location":{"lat":43.4926777,"lng":-80.52293929999999},"travel_mode":"DRIVING","score":28.48230807855492},{"distance":{"text":"1.4 km","value":1445},"duration":{"text":"3 mins","value":174},"end_location":{"lat":43.4819457,"lng":-80.52616429999999},"html_instructions":"Turn <b>left</b> onto <b>King St N/Waterloo Regional Rd 15</b>","maneuver":"turn-left","polyline":{"points":"q`nhGfhojN?\\ZE~BYzB]pBUfCSz@Kr@KfCe@hC_@^IzC_@~Ce@lFm@jFq@lCc@VEz@ILOnFu@`IeA"},"start_location":{"lat":43.494651,"lng":-80.5288405},"travel_mode":"DRIVING","score":52.08757186305426},{"distance":{"text":"1.8 km","value":1750},"duration":{"text":"3 mins","value":193},"end_location":{"lat":43.4750516,"lng":-80.5456495},"html_instructions":"Turn <b>right</b> onto <b>Columbia St W</b>","maneuver":"turn-right","polyline":{"points":"eqkhGnwnjNbB~FvAfGLd@fEnPpAbFlDdNnA~EzA|F|@lDHVVfA@BH^@BHV?DPr@@?Rz@Nn@|AxFf@rBPj@Fp@ZtAPv@z@rDjBpH"},"start_location":{"lat":43.4819457,"lng":-80.52616429999999},"travel_mode":"DRIVING","score":77.62600240549709}],"via_waypoint":[]}],"overview_polyline":{"points":"kadjGhtedNwCaUmSrD_NdCcCF_Ee@mFWeFd@qSzD}c@tHaNtB_Bo@g@_ABwBr@}@~@Gt@l@pA|ExC`QpHfe@`QfhA~Fx`@pGle@zJjx@~PvuAzGtc@xIn_@dc@jwArJ~ZbKp_@nEfStLlc@jGtUjIx_@~Ff]tFh_@rMd}@lHhf@bEfVdCnI~FfMvPxTvKdMbRbVfKvPvGbMfNhXdLxTz]|q@jElGzFdGjDpClF`DjJhDfJxArf@~@`KPvFd@fEr@jHnBpF|BpMhHlW~Nxo@f^pUrMxLrGhKnEhPvE~RfEp^~IhLtE~K`GvKnHbMxJxUrT`YrZpd@lj@xO`ThHzK`JvP`FbLvT`i@lE`JjKxOjXl_@|HhIpMpKjO|LvOrNna@|d@`KjLrGnJ`JtQxDhKfD~LfCrM|Dn]xA`LpCrMdJnWxLlVhInMfL~OvRjUdHhJjI~OzDvIDn@`HtP~EnMdCzE`E|DnElB|KpCvL`DbH`EbHhHvNlOjyA|cB`_AbfAl{@jbAzVvYhE`GfFfJvDhJlDnLrBzJxApKbFdo@rBxWzAzLhCnMhDjLnMt^zc@~oA`BnG~@jG`E|q@pDjp@dBzTxBpJ|CfI|n@nlAfNlWvGnJ`InIda@xY|\\dVhFzFpDrGhDnKjAxGt@vJ~Bpj@lAxXl@dGzAzHdCnHfIxQpWxk@~Yhp@pGhPvDfOvL|p@vVjuAhH~`@hCfRn@xI^lN`App@|AlaAbAhM|A~K~Kdm@`Npt@~`@jxBlZt`BlBrJjDzL~V|s@fDlMlBtKlAbMt@zViArqBQxZPjVr@rL`BrOrV~{BzXpgCb]j}CfD~VxSlaAn]l_B`DpNhMpa@lNrc@pM|a@nMxn@nIbc@xAhNfCfrBhAxfAl@teAf@hz@`@vHfAdItAxF`CvGfW~g@hEvIxAnExHjYnEzTLzIeAvHsApD}FxKaJnPiEdK_[dgA_D|PwFp]aFvOeJtQaFrLqHpTyGtS{CbOyKrq@mB|IgB|EcF|IuLhMwBlCaDbG_E`MqK|e@_EvO}F~R}CvDqD`AeGe@sEi@gAJgD@sC`@iDjAgDxBiHfJaFvHoInKqBlBaEbDqGtEyLnMgPrQ}FjDoFfAsE?wRu@gG\\mFhBu]zO_HnDaE~DyCtFkAtDwAnIWhJlDlf@VlHQdFwAnJkCdHoC~DiBdBqGfDgp@`X_JzFaDzCoFtH}FlM{C`LwBhPeF`_AoBdUm@bC}AnB}BpBo@jA_@zB\\fFhWeDdb@yFhAYpP{BpK|a@lOxl@bM`h@"},"summary":"ON-407 and ON-401 W","warnings":[],"waypoint_order":[]}],"status":"OK"}
+);

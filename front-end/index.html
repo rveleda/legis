@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>LEGIS</title>
+    <link rel="stylesheet" type="text/css" href="css/legis.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=drawing,places,geometry"></script>
+    <script src="js/legis.js"></script>
+
+  </head>
+
+  <body>
+    <div id="pane">
+      <div id="logo"><img src="img/logo1.png" /></div>
+      <div id="hide-btn">.<br/>.<br/>.</div>
+      <br/><br/>
+      <div id="location">
+        <div>Your location</div>
+        <div id="start-location"></div>
+        <br/>
+        <div>Destination</div>
+        <div id="end-location-input">
+          <input type="text" id="destination" value="York University">
+        </div>
+        <div id="end-location"></div>
+
+        <br/><br/>
+        <div class="filters">
+          <div>
+            <input type="checkbox" value="None" id="filter1" name="check" checked />
+            <label for="filter1">Average Speed</label>
+          </div>
+
+          <div>
+            <input type="checkbox" value="None" id="filter2" name="check" checked />
+            <label for="filter2">Tolls</label>
+          </div>
+
+          <div>
+            <input type="checkbox" value="None" id="filter3" name="check" checked />
+            <label for="filter3">Traffic Tickets</label>
+          </div>
+        </div>
+
+        <div id="footer">
+          <div id="label-edge">You are connected to edge:</div>
+          <div>
+            <img id="logo-edge" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="map"></div>
+
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>LEGIS</title>
+    <style>
+      html, body, #map {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+
+      #panel {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        margin-left: -180px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+      }
+
+      #bar {
+        width: 240px;
+        background-color: rgba(255, 255, 255, 0.75);
+        margin: 8px;
+        padding: 4px;
+        border-radius: 4px;
+      }
+
+      #pane {
+        width: 600px;
+        float: left;
+      }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?libraries=drawing,places"></script>
+    <script>
+var apiKey = 'AIzaSyBWdGBJLWQaCoyea6synNCIxrCjWSwhyHk';
+
+var map;
+var drawingManager;
+
+var service = new google.maps.DirectionsService();
+var path = new google.maps.MVCArray();
+var paths = [];
+var colors = ["red", "blue", "orange", "purple", "green", "yellow"];
+var curColorIdx = 0;
+
+var routes = [
+  { start: { lat: 43.659620, lng:-79.397004 }, end: { lat: 43.771425, lng:-79.500897 }, color:"red" }, // Bahen to Yourk U (Toronto - York)
+  { start: { lat: 43.633198, lng:-79.418530 }, end: { lat: 43.795691, lng:-79.423825 }, color:"blue" }, // BMO Field to Yourk U (Toronto - York)
+  { start: { lat: 43.686799, lng:-79.393572 }, end: { lat: 43.633198, lng:-79.418530 }, color:"orange" }, // Prospect cemetary to BMO Field (Only Toronto)
+  { start: { lat: 43.676092, lng:-79.451475 }, end: { lat: 43.649237, lng:-79.378117 }, color:"purple" }, // Prospect cemetary to King Station (Only Toronto)
+  { start: { lat: 43.662799, lng:-79.395603 }, end: { lat: 45.387762, lng:-75.695747 }, color:"green" }, // U of Toronto to Carleton U (Toronto - Carleton)
+  { start: { lat: 43.662799, lng:-79.395603 }, end: { lat: 43.473129, lng:-80.541065 }, color:"yellow" }, // U of Toronto to U of Waterloo (Toronto - Waterloo)
+];
+
+function initialize() {
+  var mapOptions = {
+    zoom: 13,
+    center: {lat: 43.6533103, lng:-79.3827675}
+  };
+
+  map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+  $( document ).ready(function() {
+    drawSnappedPolyline();
+    var output = $("#output");
+
+    google.maps.event.addListener(map, 'click', function(event) {
+      marker = new google.maps.Marker({position: event.latLng, map: map});
+      output.append("{ \"lat\": " + event.latLng.lat() + ", \"lng\": " + event.latLng.lng() + ", \"loop\":1 }, <br/>");
+    });
+
+  });
+
+}
+
+// Draws the snapped polyline
+function drawSnappedPolyline() {
+  var output = $("#output");
+  console.log(output);
+  for (var i = 0; i < routes.length; i++) {
+    service.route({
+      origin: routes[i].start,
+      destination: routes[i].end,
+      travelMode: google.maps.DirectionsTravelMode.DRIVING },
+
+      function(result, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+
+          console.log("Number of paths: " + result.routes.length);
+
+          for (var option=0; option<result.routes.length; option++) {
+            var curPath = [];
+
+            //output.append(" \"coords\": [</br>");
+            for(var index = 0; index < result.routes[option].overview_path.length; index++) {
+      		    curPath.push(result.routes[option].overview_path[index]);
+
+              //output.append("{ \"lat\": " + result.routes[option].overview_path[index].J + ", \"lng\": " + result.routes[option].overview_path[index].M + "}");
+              if (index < result.routes[option].overview_path.length - 1) {
+                //output.append(", ");
+              }
+              //output.append("</br>");
+      		  }
+            var poly = new google.maps.Polyline({ strokeColor: colors[curColorIdx++] , strokeWeight: 3, map: map });
+            poly.setPath(curPath);
+
+            //output.append(" ] ");
+            if (option < result.routes.length-1) {
+              //output.append(",");
+            }
+            //output.append("</br>");
+          }
+
+        } else {
+          console.log("Error getting directions");
+        }
+      });
+  }
+}
+
+$(window).load(initialize);
+
+
+
+    </script>
+  </head>
+
+  <body>
+    <div id="pane">
+      <div id="output"></div>
+    </div>
+    <div id="map"></div>
+  </body>
+</html>

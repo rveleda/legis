@@ -1,0 +1,125 @@
+html, body, #map {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-weight:normal;
+  color:#000000;
+  letter-spacing:1pt;
+  word-spacing:2pt;
+  font-size:14px;
+  text-align:left;
+  font-family:arial, helvetica, sans-serif;
+  line-height:1;
+}
+
+#panel {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  margin-left: -180px;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+}
+
+#pane {
+  width: 250px;
+  float: left;
+  padding: 15px;
+  -moz-box-shadow:    -5px 0px 5px 0px #BBBBBB inset;
+  -webkit-box-shadow: -5px 0px 5px 0px #BBBBBB inset;
+  box-shadow:         -5px 0px 5px 0px #BBBBBB inset;
+  height: 100%
+}
+
+#hide-btn {
+  width: 30px;
+  height: 50px;
+  -moz-box-shadow:    1px -1px 5px 3px #BBB inset;
+  -webkit-box-shadow: 1px -1px 5px 3px #BBB inset;
+  box-shadow:         1px -1px 5px 3px #BBB inset;
+  position: relative;
+  left: 235px;
+  color: gray;
+  text-align: center;
+  cursor: pointer;
+}
+
+#logo {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#start-location, #end-location, #end-location-input {
+  margin-left: 10px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+#location {
+  font-weight: bold;
+}
+
+#location div {
+  padding: 3px;
+}
+
+input[type="text"] {
+  padding: 2px;
+  border: solid 3px #c9c9c9;
+  transition: border 0.3s;
+}
+input[type="text"]:focus,
+input[type="text"].focus {
+  border: solid 3px #969696;
+}
+
+input[type=checkbox] {
+  position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+}
+
+input[type=checkbox] + label {
+  padding-left:25px;
+  height:20px;
+  display:inline-block;
+  line-height:20px;
+  background-repeat:no-repeat;
+  background-position: 0 0;
+  /*font-size:20px;*/
+  vertical-align:middle;
+  cursor:pointer;
+
+}
+
+input[type=checkbox]:checked + label {
+  background-position: 0 -20px;
+}
+label {
+  background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_8b29106deb7c579e346a9be235d57fbe.png);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#logo-edge {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+#label-edge {
+  font-size: 8pt;
+  font-weight: normal;
+  text-align: center;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: 15px;
+}

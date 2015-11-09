@@ -1,0 +1,314 @@
+{
+  "coords": [
+    {
+      "lat": 43.68505921254432,
+      "lng": -79.40081119537354,
+      "street-name": "Avenue Rd."
+    },
+    {
+      "lat": 43.66630391789924,
+      "lng": -79.39314007759094,
+      "street-name": "Avenue Rd."
+    },
+    {
+      "lat": 43.66626511311716,
+      "lng": -79.39312934875488,
+      "street-name": "Queens Park Crescent W"
+    },
+    {
+      "lat": 43.660614869120806,
+      "lng": -79.39109086990356,
+      "street-name": "Queens Park Crescent W"
+    },
+    {
+      "lat": 43.660591584048056,
+      "lng": -79.39105868339539,
+      "street-name": "University Ave."
+    },
+    {
+      "lat": 43.64528357558723,
+      "lng": -79.38242197036743,
+      "street-name": "University Ave."
+    },
+    {
+      "lat": 43.64529910292745,
+      "lng": -79.38240051269531,
+      "street-name": "York St."
+    },
+    {
+      "lat": 43.64102893315416,
+      "lng": -79.38069462776184,
+      "street-name": "York St."
+    },
+    {
+      "lat": 43.683794559050085,
+      "lng": -79.40286040306091,
+      "street-name": "Balmoral Ave."
+    },
+    {
+      "lat": 43.68586609409345,
+      "lng": -79.39314007759094,
+      "street-name": "Balmoral Ave."
+    },
+    {
+      "lat": 43.6879996228205,
+      "lng": -79.39406275749207,
+      "street-name": "Yonge St."
+    },
+    {
+      "lat": 43.68501266135459,
+      "lng": -79.39279675483704,
+      "street-name": "Yonge St."
+    },
+    {
+      "lat": 43.642426476674316,
+      "lng": -79.37937498092651,
+      "street-name": "Lake Shore Blvd."
+    },
+    {
+      "lat": 43.63442121778574,
+      "lng": -79.40866470336914,
+      "street-name": "Lake Shore Blvd."
+    },
+    {
+      "lat": 43.632666285248014,
+      "lng": -79.41721558570862,
+      "street-name": "Princes Blvd."
+    },
+    {
+      "lat": 43.63516666034687,
+      "lng": -79.40805315971375,
+      "street-name": "Princes Blvd."
+    },
+    {
+      "lat": 43.640959055124775,
+      "lng": -79.38064098358154,
+      "street-name": "Harbour St."
+    },
+    {
+      "lat": 43.643412501708724,
+      "lng": -79.37541604042053,
+      "street-name": "Harbour St."
+    },
+    {
+      "lat": 43.64189851960977,
+      "lng": -79.37467575073242,
+      "street-name": "Yonge St."
+    },
+    {
+      "lat": 43.650391853968806,
+      "lng": -79.37842011451721,
+      "street-name": "Yonge St."
+    },
+    {
+      "lat": 43.66205852599459,
+      "lng": -79.39760327339172,
+      "street-name": "St. George St."
+    },
+    {
+      "lat": 43.65872098703472,
+      "lng": -79.39602613449097,
+      "street-name": "St. George St."
+    },
+    {
+      "lat": 43.6604518734219,
+      "lng": -79.39694881439209,
+      "street-name": "Russell St."
+    },
+    {
+      "lat": 43.65986198052727,
+      "lng": -79.39988851547241,
+      "street-name": "Russell St."
+    },
+    {
+      "lat": 43.657960312660464,
+      "lng": -79.39993143081665,
+      "street-name": "Spadina Ave."
+    },
+    {
+      "lat": 43.666668681624785,
+      "lng": -79.4037938117981,
+      "street-name": "Spadina Ave."
+    },
+    {
+      "lat": 43.66664539890002,
+      "lng": -79.4038474559784,
+      "street-name": "Spadina Rd."
+    },
+    {
+      "lat": 43.677416575077046,
+      "lng": -79.4081175327301,
+      "street-name": "Spadina Rd."
+    },
+    {
+      "lat": 43.67610520237388,
+      "lng": -79.4063150882721,
+      "street-name": "Macpherson Ave."
+    },
+    {
+      "lat": 43.67537578740182,
+      "lng": -79.40975904464722,
+      "street-name": "Macpherson Ave."
+    },
+    {
+      "lat": 43.675366087674895,
+      "lng": -79.40974295139313,
+      "street-name": "Kendal Ave."
+    },
+    {
+      "lat": 43.676836548377636,
+      "lng": -79.41034108400345,
+      "street-name": "TEST"
+    },
+    {
+      "lat": 43.677108133483394,
+      "lng": -79.40921992063522,
+      "street-name": "Davenport Rd."
+    },
+    {
+      "lat": 43.67663673855071,
+      "lng": -79.41898584365845,
+      "street-name": "Davenport Rd."
+    },
+    {
+      "lat": 43.67427776835802,
+      "lng": -79.4148713350296,
+      "street-name": "Bathurst St."
+    },
+    {
+      "lat": 43.702443555444276,
+      "lng": -79.42568063735962,
+      "street-name": "Bathurst St."
+    },
+    {
+      "lat": 43.701512794636706,
+      "lng": -79.42311644554138,
+      "street-name": "Eglinton Ave."
+    },
+    {
+      "lat": 43.698766966064895,
+      "lng": -79.4359803199768,
+      "street-name": "Eglinton Ave."
+    },
+    {
+      "lat": 43.74152246070405,
+      "lng": -79.45396184921265,
+      "street-name": "Allen Rd."
+    },
+    {
+      "lat": 43.75946385093844,
+      "lng": -79.46495354175568,
+      "street-name": "Allen Rd."
+    },
+    {
+      "lat": 43.759471599836886,
+      "lng": -79.46488916873932,
+      "street-name": "Dufferin St."
+    },
+    {
+      "lat": 43.76993169757659,
+      "lng": -79.46720123291016,
+      "street-name": "Dufferin St."
+    },
+    {
+      "lat": 43.77019511346309,
+      "lng": -79.46065664291382,
+      "street-name": "Finch Ave."
+    },
+    {
+      "lat": 43.763469897580165,
+      "lng": -79.4910192489624,
+      "street-name": "Finch Ave."
+    },
+    {
+      "lat": 43.76040146036614,
+      "lng": -79.48730707168579,
+      "street-name": "Tangerine Rd."
+    },
+    {
+      "lat": 43.76768486786699,
+      "lng": -79.49005365371704,
+      "street-name": "Tangerine Rd."
+    },
+    {
+      "lat": 43.765716885613806,
+      "lng": -79.49153423309326,
+      "street-name": "Keele St."
+    },
+    {
+      "lat": 43.77519979487982,
+      "lng": -79.4939374923706,
+      "street-name": "Keele St."
+    },
+    {
+      "lat": 43.77313909442939,
+      "lng": -79.48818683624268,
+      "street-name": "The pond road"
+    },
+    {
+      "lat": 43.769962687741085,
+      "lng": -79.50247764587402,
+      "street-name": "The pond road"
+    },
+    {
+      "lat": 43.81554731809279,
+      "lng": -79.34137344360352,
+      "street-name": "Steeles Ave."
+    },
+    {
+      "lat": 43.79606619572214,
+      "lng": -79.42934989929199,
+      "street-name": "Steeles Ave."
+    },
+    {
+      "lat": 43.473913013738795,
+      "lng": -80.49397230148315,
+      "street-name": "9"
+    },
+    {
+      "lat": 43.46439803622594,
+      "lng": -80.5253005027771,
+      "street-name": "9"
+    },
+    {
+      "lat": 43.46584640276942,
+      "lng": -80.523841381073,
+      "street-name": "Albert St."
+    },
+    {
+      "lat": 43.473772869456525,
+      "lng": -80.53171634674072,
+      "street-name": "Albert St."
+    },
+    {
+      "lat": 43.47206775465764,
+      "lng": -80.52986025810242,
+      "street-name": "Seagram Dr."
+    },
+    {
+      "lat": 43.46902334331711,
+      "lng": -80.53984880447388,
+      "street-name": "Seagram Dr."
+    },
+    {
+      "lat": 43.46819797775937,
+      "lng": -80.5403745174408,
+      "street-name": "Ring Rd."
+    },
+    {
+      "lat": 43.47358600990796,
+      "lng": -80.54193019866943,
+      "street-name": "Ring Rd."
+    },
+    {
+      "lat": 45.404566840402964,
+      "lng": -75.7016372680664,
+      "street-name": "79"
+    },
+    {
+      "lat": 45.38784182444948,
+      "lng": -75.6922173500061,
+      "street-name": "79"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+127.0.0.1	localhost
+::1	localhost ip6-localhost ip6-loopback
+fe00::0	ip6-localnet
+ff00::0	ip6-mcastprefix
+ff02::1	ip6-allnodes
+ff02::2	ip6-allrouters
+192.168.200.7	8c82515564ac
+172.18.0.3	8c82515564ac
+
+10.12.7.37 master-ycsb-hb
+10.12.7.44 wrk1-ycsb-hb
+10.12.7.52 wrk2-ycsb-hb
+10.12.7.56 wrk3-ycsb-hb
+10.12.7.29 wrk4-ycsb-hb
+10.12.7.61 wrk5-ycsb-hb
+10.12.7.64 wrk6-ycsb-hb
+10.12.7.65 wrk7-ycsb-hb
+10.12.7.6  wrk8-ycsb-hb
+10.12.7.62 wrk9-ycsb-hb
+10.12.7.63 wrk10-ycsb-hb
+10.12.7.67 wrk11-ycsb-hb
+10.12.7.59 master2-ycsb-hb

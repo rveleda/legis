@@ -303,33 +303,52 @@ public class Directions {
 		
 		Process process = builder.start();
 		
-    	InputStream is = process.getInputStream();
-    	InputStreamReader isr = new InputStreamReader(is);
-    	BufferedReader br = new BufferedReader(isr);
-    	String line;
+//    	InputStream is = process.getInputStream();
+//    	InputStreamReader isr = new InputStreamReader(is);
+//    	BufferedReader br = new BufferedReader(isr);
+//    	String line;
+//
+//    	DecimalFormat df = new DecimalFormat("#.00"); 
+//    	
+//    	int cont = 0;
+//    	
+//    	while ((line = br.readLine()) != null) {
+//    		if (line.startsWith("SCORE:")) {
+//    			System.out.println(line);
+//    			double score = Double.parseDouble(line.substring(6));
+//    			scores[cont] = df.format(score);
+//    			cont++;
+//    		}
+//    		
+//    		if (cont == coords.size())
+//    			break;
+//    	}
+//    	
+//    	br.close();
+//    	process.destroy();
+//    	
+//    	System.out.println("TOTAL SCORES COLLECTED: " + cont);
+		
+		SparkInputStreamReaderRunnable inputStreamReaderRunnable = new SparkInputStreamReaderRunnable(process.getInputStream(), "input", scores);
+		Thread inputThread = new Thread(inputStreamReaderRunnable, "LogStreamReader input");
+		inputThread.start();
 
-    	DecimalFormat df = new DecimalFormat("#.00"); 
-    	
-    	int cont = 0;
-    	
-    	while ((line = br.readLine()) != null) {
-    		if (line.startsWith("SCORE:")) {
-    			System.out.println(line);
-    			double score = Double.parseDouble(line.substring(6));
-    			scores[cont] = df.format(score);
-    			cont++;
-    		}
-    		
-    		if (cont == coords.size())
-    			break;
-    	}
-    	
-    	br.close();
-    	process.destroy();
-    	
-    	System.out.println("TOTAL SCORES COLLECTED: " + cont);
+		SparkInputStreamReaderRunnable errorStreamReaderRunnable = new SparkInputStreamReaderRunnable(process.getErrorStream(), "error", scores);
+		Thread errorThread = new Thread(errorStreamReaderRunnable, "LogStreamReader error");
+		errorThread.start();
 
-    	return scores;
+		System.out.println("Waiting for finish...");
+		int exitCode = process.waitFor();
+		System.out.println("Finished! Exit code:" + exitCode);
+		
+		if (exitCode == 0) {
+			System.out.println("TOTAL SCORES COLLECTED: " + inputStreamReaderRunnable.getTotalScoresCollected());
+			
+			return inputStreamReaderRunnable.getScores();
+		} else {
+			System.out.println("Something went wrong. Returning null scores...");
+			return scores;
+		}
     }
 
 	public static void main(String[] args) {

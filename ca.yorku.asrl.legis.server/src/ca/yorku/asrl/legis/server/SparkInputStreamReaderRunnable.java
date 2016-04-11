@@ -21,12 +21,12 @@ public class SparkInputStreamReaderRunnable implements Runnable {
     }
 
     public void run() {
-        System.out.println("InputStream " + name + ":");
- 
+    	System.out.println("InputStream " + name + ":");
+    	
         try {
         	String line;
         	
-            if (name.equals("input")) {
+            if (name.contains("input")) {
             	int cont = 0;
             	DecimalFormat df = new DecimalFormat("#.00"); 
             	
@@ -46,19 +46,32 @@ public class SparkInputStreamReaderRunnable implements Runnable {
                 	System.out.println(line);
                 }
             }
-            reader.close();
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+        	if (reader != null) {
+        		try {
+					reader.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+        	}
         }
     }
 
 	public String[] getScores() {
 		return scores;
 	}
-
-	public void setScores(String[] scores) {
-		this.scores = scores;
+	
+	public int getTotalScoresCollected() {
+		int cont = 0;
+		
+		for (String score : scores) {
+			if (score != null)
+				cont++;
+		}
+		
+		return cont;
 	}
-    
     
 }

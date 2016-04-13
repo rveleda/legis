@@ -23,6 +23,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.client.ClientBuilder;
@@ -48,7 +49,7 @@ public class Directions {
 	public static final CloudNode north = CloudNode.EDGE_YK_1;
 	public static final CloudNode south = null;
 	public static final CloudNode east = CloudNode.EDGE_CT_1;
-	public static final String filename = "/WEB-INF/jsonResponse.json";
+	public static final String filename = "/WEB-INF/jsonResponse_10.json";
 	
 	@Context
 	private ServletContext context;

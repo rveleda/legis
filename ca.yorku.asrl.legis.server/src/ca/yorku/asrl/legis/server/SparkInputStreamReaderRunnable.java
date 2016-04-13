@@ -20,9 +20,7 @@ public class SparkInputStreamReaderRunnable implements Runnable {
         this.scores = scores;
     }
 
-    public void run() {
-    	System.out.println("InputStream " + name + ":");
-    	
+    public void run() {    	
         try {
         	String line;
         	

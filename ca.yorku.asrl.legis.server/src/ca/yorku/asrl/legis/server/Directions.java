@@ -1,29 +1,17 @@
 package ca.yorku.asrl.legis.server;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.StringReader;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.text.DecimalFormat;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 import javax.servlet.ServletContext;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.client.ClientBuilder;
@@ -31,6 +19,8 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
+import org.apache.commons.io.IOUtils;
 
 import ca.yorku.asrl.legis.gateway.CloudNode;
 
@@ -54,8 +44,6 @@ public class Directions {
 	@Context
 	private ServletContext context;
 	
-	private String jsonResponse;
-	
 	//public HashMap<ClientIP,>
 	
 	@GET
@@ -68,33 +56,43 @@ public class Directions {
 		String origin = ""+origin_lat+","+origin_long;
 		String destination = ""+destination_lat+","+destination_long;
 
+		InputStream is = null;
+		
+		String jsonResponse = "";
+		
 		if (!dynamic) {
 			try {
 				//byte[] encoded = Files.readAllBytes(Paths.get("jsonResponse.json"));
 				//jsonResponse = new String(encoded, StandardCharsets.UTF_8);
 				
-				jsonResponse = new Scanner(context.getResourceAsStream(filename), "UTF-8").useDelimiter("\\A").next();
+				is = context.getResourceAsStream(filename);
+				
+				jsonResponse = IOUtils.toString(is, "UTF-8");
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
+			} finally {
+				if (is != null) {
+					try {
+						is.close();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
 			}
 		}
-		else {
-			jsonResponse = "";
-		}
 		
-		if (jsonResponse == null || jsonResponse.equals("")) {
-			Response response = ClientBuilder
-					.newClient()
-					.target("https://maps.googleapis.com/maps/api/directions/json")
-					.queryParam("origin", origin)
-					.queryParam("destination", destination)
-					.queryParam("key", GOOGLE_API_KEY)
-					.queryParam("alternatives", "true").request()
-					.get(Response.class);
-			System.out.println("Google request sent.");
-			jsonResponse = response.readEntity(String.class);
-		}
+//		if (jsonResponse == null || jsonResponse.equals("")) {
+//			Response response = ClientBuilder
+//					.newClient()
+//					.target("https://maps.googleapis.com/maps/api/directions/json")
+//					.queryParam("origin", origin)
+//					.queryParam("destination", destination)
+//					.queryParam("key", GOOGLE_API_KEY)
+//					.queryParam("alternatives", "true").request()
+//					.get(Response.class);
+//			System.out.println("Google request sent.");
+//			jsonResponse = response.readEntity(String.class);
+//		}
 		
 		JsonParser parser = new JsonParser();
 		JsonReader reader = new JsonReader(new StringReader(jsonResponse));
@@ -102,11 +100,17 @@ public class Directions {
 		JsonObject o = parser.parse(reader).getAsJsonObject();
 		//JsonObject localJson = parser.parse(response.readEntity(String.class)).getAsJsonObject();
 		
+		try {
+			parser = null;
+			reader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		//System.out.println(jsonResponse);
 		JsonObject annotated = null;
 		if(o.get("status").getAsString().equals("OK")) {
-			annotated = parser.parse(annotate(o.toString())).getAsJsonObject();
+			annotated = annotate(o);
 		}
 		
 //		try {
@@ -165,10 +169,11 @@ public class Directions {
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public String annotate(String json) {
-		JsonParser parser = new JsonParser();
-		JsonObject o = parser.parse(json).getAsJsonObject();
-		HashSet<CloudNode> forwardNeighbors = new HashSet<CloudNode>();
+	public JsonObject annotate(JsonObject o) {
+		//HashSet<CloudNode> forwardNeighbors = new HashSet<CloudNode>();
+		
+		StringBuffer sb = new StringBuffer();
+		
 		for(JsonElement route : o.get("routes").getAsJsonArray()) {
 			for(JsonElement leg : route.getAsJsonObject().get("legs").getAsJsonArray()) {
 				for(JsonElement step : leg.getAsJsonObject().get("steps").getAsJsonArray()) {
@@ -177,6 +182,12 @@ public class Directions {
 							stepObject.get("end_location").getAsJsonObject().get("lng").getAsDouble());
 //					double score = getScoreForStep(stepObject.toString());
 //					stepObject.addProperty("score", score);
+					
+					String latitude = step.getAsJsonObject().get("end_location").getAsJsonObject().get("lat").getAsString();
+					String longitude = step.getAsJsonObject().get("end_location").getAsJsonObject().get("lng").getAsString();
+					
+					sb.append(latitude).append("+").append(longitude).append("_");
+					
 					stepObject.addProperty("score", "%s");
 					
 					/*if (direction.equals("inbounds")) {
@@ -218,68 +229,61 @@ public class Directions {
 				}
 			}
 		}
-		jsonResponse = callSpark(o.toString());
+		
+		JsonObject jsonOResponse = callSpark(o, sb.toString());
 		/*for(CloudNode neighbor : forwardNeighbors) {
 			forwardResponse(neighbor);
 		}*/
 		//jsonResponse = o.toString();
-		return jsonResponse;
+		return jsonOResponse;
 	}
 
-	private String callSpark(String json) {
+	private JsonObject callSpark(JsonObject o, String coords) {
 //		Response response = ClientBuilder.newClient().target("http://10.12.7.25:9000/spark/getScore")
 //				.request()
 //				.put(Entity.json(json),Response.class);
 //		return response.readEntity(String.class);
 		
-		return this.calculateScore(json);
+		return this.calculateScore(o, coords);
 	}
 
-	private void forwardResponse(CloudNode neighbor) {
-		Response response = ClientBuilder.newClient().target("http://"+neighbor.getPrivateIPAddress()+":8080/ca.yorku.asrl.legis.server/rest/directions/annotate")
-		.request()
-		.put(Entity.json(jsonResponse),Response.class);
-		jsonResponse = response.readEntity(String.class);
-		
-	}
+//	private void forwardResponse(CloudNode neighbor) {
+//		Response response = ClientBuilder.newClient().target("http://"+neighbor.getPrivateIPAddress()+":8080/ca.yorku.asrl.legis.server/rest/directions/annotate")
+//		.request()
+//		.put(Entity.json(jsonResponse),Response.class);
+//		jsonResponse = response.readEntity(String.class);
+//		
+//	}
 
-	private double getScoreForStep(String string) {
-		Random gen = new Random();
-		return gen.nextDouble()*100;
-	}
+//	private double getScoreForStep(String string) {
+//		Random gen = new Random();
+//		return gen.nextDouble()*100;
+//	}
 	
-	private String calculateScore(String jsonResponse) {
-		JsonParser parser = new JsonParser();
-		JsonObject o = parser.parse(jsonResponse).getAsJsonObject();
-		
-		StringBuffer sb = new StringBuffer();
-		
-		for (JsonElement route : o.get("routes").getAsJsonArray()) {
-			for (JsonElement leg : route.getAsJsonObject().get("legs").getAsJsonArray()) {
-				for (JsonElement step : leg.getAsJsonObject().get("steps").getAsJsonArray()) {
-					String latitude = step.getAsJsonObject().get("end_location").getAsJsonObject().get("lat").getAsString();
-					String longitude = step.getAsJsonObject().get("end_location").getAsJsonObject().get("lng").getAsString();
-					
-					sb.append(latitude).append("+").append(longitude).append("_");
-				}
-			}
-		}
-		
-		String coords = sb.toString();
-		
+	private JsonObject calculateScore(JsonObject o, String coords) {
 		System.out.println("COORDS: " + coords);
 
 	    if (coords.length() > 0) {
 	    	try {
-	    		Object[] scores = (Object[]) getScoreFromSpark(coords);
-
-	    		jsonResponse = String.format(jsonResponse, scores);
+	    		Object[] scores = (Object[]) this.getScoreFromSpark(coords);
+	    		
+	    		int cont = 0;
+	    		
+	    		for (JsonElement route : o.get("routes").getAsJsonArray()) {
+	    			for (JsonElement leg : route.getAsJsonObject().get("legs").getAsJsonArray()) {
+	    				for (JsonElement step : leg.getAsJsonObject().get("steps").getAsJsonArray()) {
+	    					JsonObject stepObject = step.getAsJsonObject();
+	    					stepObject.addProperty("score", ""+scores[cont]);
+	    					cont++;
+	    				}
+	    			}
+	    		}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 	    }
 	    
-	    return jsonResponse;
+	    return o;
 	}
 	
     private String[] getScoreFromSpark(String coordsFull) throws Exception {
@@ -342,11 +346,23 @@ public class Directions {
 		int exitCode = process.waitFor();
 		System.out.println("Finished! Exit code:" + exitCode);
 		
+		inputThread = null;
+		errorThread = null;
+		
 		if (exitCode == 0) {
-			System.out.println("TOTAL SCORES COLLECTED: " + inputStreamReaderRunnable.getTotalScoresCollected());
+			int totalScores = inputStreamReaderRunnable.getTotalScoresCollected();
+			scores = inputStreamReaderRunnable.getScores();
 			
-			return inputStreamReaderRunnable.getScores();
+			System.out.println("TOTAL SCORES COLLECTED: " + totalScores);
+			
+			inputStreamReaderRunnable = null;
+			errorStreamReaderRunnable = null;
+			
+			return scores;
 		} else {
+			inputStreamReaderRunnable = null;
+			errorStreamReaderRunnable = null;
+			
 			System.out.println("Something went wrong. Returning null scores...");
 			return scores;
 		}

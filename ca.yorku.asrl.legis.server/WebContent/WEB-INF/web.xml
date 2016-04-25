@@ -14,4 +14,7 @@
     <servlet-name>Jersey REST Service</servlet-name>
     <url-pattern>/rest/*</url-pattern>
   </servlet-mapping>
+  <listener>
+  	<listener-class>ca.yorku.asrl.legis.server.ServletContextInitializer</listener-class>
+  </listener>
 </web-app>
